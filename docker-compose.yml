@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - DEBUG=1
+    command: python manage.py runserver 0.0.0.0:8000
+    working_dir: /app/AYA
+
+  db:
+    image: postgres:15
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_DB=aya_db
+      - POSTGRES_USER=aya_user
+      - POSTGRES_PASSWORD=aya_password
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

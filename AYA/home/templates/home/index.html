@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Liste des Étudiants</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #ffc0cb; /* Couleur rose */
+        }
+
+        #rectangle {
+            background-color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #carre {
+            background-color: gray;
+            padding: 70px;
+            border-radius: 20px;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #ajouterButton {
+            background-color: darkgray; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #ajouterButton:hover {
+            background-color: gray; /* Couleur verte plus foncée au survol */
+        }
+
+        #delButton {
+            background-color: darkgray; /* Couleur verte */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #delButton:hover {
+            background-color: gray; /* Couleur verte plus foncée au survol */
+        }
+
+        li {
+            background-color: #fff;
+            
+            margin: 10px;
+           
+            
+             /* Calcul de la largeur pour 5 éléments par ligne avec marges */
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="rectangle">
+        <h2>Student List</h2>
+       
+                        
+            {% block content %}
+                
+
+            {% endblock %}
+           
+                
+            
+       
+        
+        <form action="" method="post">
+            {% csrf_token %}
+
+            <label for="name"> Enter the name :</label>
+            <input type="text" id="name" name="name">
+            <br><br>
+            <button type="submit">display</button>
+        </form>
+        <p></p>
+        <a id="ajouterButton" href="/gpdf" class="button">Generate PDF</a>
+
+        <h2>Notes</h2> 
+        <a id="ajouterButton" href="/create-grade" class="button">ADD</a>
+        
+        
+    </div>
+
+</body>
+</html>

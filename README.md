@@ -20,7 +20,7 @@ Application de gestion d'étudiants développée avec Django, maintenant contene
 1. **Cloner le repository**
 ```bash
 git clone https://github.com/yannisNERD/projet-AYA-DJANGO.git
-cd projet-AYA-DJANGO
+cd django-containerized-app
 ```
 
 2. **Lancer l'application**
